@@ -16,7 +16,7 @@ ip_add_file = open(r'e:\psb\ip_list2.txt','r') # a simple list of IP addresses y
 #loop for connecting to hosts and create backups
 for host in ip_add_file:
     host = host.strip()
-    filedisk = open(r'\\nas.hq.gr-lm.corp.leroymerlin.com\BackupHQ\HQ_CriticalBackupBFILE\FileCopy\WindowsImageBackup\ncbackup\Procurve' + host + '-' + mytime + '.txt', 'w') #Create txt files from the ip_list.txt ip addresses.
+    filedisk = open(r'path to the backup files' + host + '-' + mytime + '.txt', 'w') #Create txt files from the ip_list.txt ip addresses. Example ('C:\Backup' + host +  + '-' + mytime + '.txt', 'w')
     sys.stdout = filedisk
     device = ConnectHandler(device_type=platform, ip=host, username=username, password=password)
     output = device.send_command('terminal length 0')
